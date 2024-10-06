@@ -21,7 +21,7 @@ class ProveedoreController extends Controller
      */
     public function index()
     {
-        $proveedores = Proveedore::with('marca')->paginate();
+        $proveedores = Proveedore::with('marca')->paginate(5);
         $marcas = Marca::pluck('nombre_m', 'id');
         return view('proveedore.index', compact('proveedores','marcas'))
             ->with('i', (request()->input('page', 1) - 1) * $proveedores->perPage());

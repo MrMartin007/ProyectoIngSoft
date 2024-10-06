@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'TiendaIS',
+    'title' => 'Byte Teach',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>TIENDAIS</b>',
+    'logo' => '<b>Byte Teach</b>',
     'logo_img' => 'https://umg.edu.gt/assets/umg.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'TIENDAIS')
+@section('title', 'Byte Teach')
 
 @section('content_header')
     <h1>Universidad Mariano Galvez</h1>

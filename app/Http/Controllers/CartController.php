@@ -15,7 +15,7 @@ class CartController extends Controller
     {
         $products = Product::all();
         //dd($products);
-        return view('shop')->withTitle('E-COMMERCE STORE | SHOP')->with(['products' => $products]);
+        return view('shop')->withTitle('Byte Teach')->with(['products' => $products]);
     }
 
     public function cart()  {
@@ -26,7 +26,7 @@ class CartController extends Controller
             $item->attributes->foto = $product->foto;
         }
         //dd($cartCollection);
-        return view('cart')->withTitle('E-COMMERCE STORE | CART')->with(['cartCollection' => $cartCollection]);
+        return view('cart')->withTitle('Byte Teach')->with(['cartCollection' => $cartCollection]);
     }
     public function create()
     {
@@ -39,7 +39,7 @@ class CartController extends Controller
         return redirect()->route('cart.index')->with('success_msg', 'Item is removed!');
     }
 
-    public function add(Request$request){
+    public function add(Request $request){
         \Cart::add(array(
             'id' => $request->id,
             'name' => $request->name,
@@ -69,14 +69,11 @@ class CartController extends Controller
         return redirect()->route('cart.index')->with('success_msg', 'Car is cleared!');
     }
 
-    public function checkout()
-
-    {
+    public function checkout(){
         return view('checkout');
     }
 
-    public function storeVenta()
-    {
+    public function storeVenta(){
         // Accede al contenido del carrito
         $cartItems = Cart::getContent();
 
@@ -96,7 +93,7 @@ class CartController extends Controller
         // Vacía el carrito después de guardar la venta
         \Cart::clear();
 
-        // Redirige o muestra un mensaje de éxito al cliente
+        // Redirige o muestra un mensaje de éxito al x|cliente
         return redirect()->back()->with('success_msg', 'La venta se ha registrado correctamente.');
     }
 }
