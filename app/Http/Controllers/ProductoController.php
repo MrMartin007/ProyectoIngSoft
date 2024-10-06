@@ -133,5 +133,15 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    
+    public function destroy($id){
+        try {
+            $producto = Producto::find($id)->delete();
+            return redirect()->route('productos.index')
+                ->with('productoEliminado', 'Eliminado');
+        }catch (\Exception $exception){
+            Log::debug($exception->getMessage());
+        return redirect()->route('productos.index')
+            ->with('alerta','si');
+    }
+    }
 }
